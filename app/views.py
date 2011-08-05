@@ -7,6 +7,7 @@ application.
 
 import os
 from flask import Module, render_template, request, redirect, url_for
+from werkzeug import secure_filename
 
 from forms import UploadForm
 from settings import UPLOAD_FOLDER
@@ -26,7 +27,8 @@ def upload():
     form = UploadForm()
     if request.method == 'POST' and form.validate_on_submit():
         data_file = request.files['file']
-        data_file.save(os.path.join(UPLOAD_FOLDER, data_file.filename))
+        file_name = secure_filename(data_file.filename)
+        data_file.save(os.path.join(UPLOAD_FOLDER, file_name))
         return redirect(url_for('thanks'))
     return render_template('upload.html', form=form)
 
