@@ -7,8 +7,10 @@ This file creates your application.
 """
 
 from flask import Flask
-from views import views
+
 import settings
+from views import views
+from models import db
 
 
 def create_app():
@@ -16,6 +18,9 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(settings)
     app.register_module(views)
+    db.app = app
+    db.init_app(app)
+    db.create_all()
     return app
 
 if __name__ == '__main__':

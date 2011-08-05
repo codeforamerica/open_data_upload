@@ -11,6 +11,7 @@ from werkzeug import secure_filename
 
 from forms import UploadForm
 from settings import UPLOAD_FOLDER
+from models import db, Dataset
 
 views = Module(__name__, 'views')
 
@@ -29,8 +30,20 @@ def upload():
         data_file = request.files['file']
         file_name = secure_filename(data_file.filename)
         data_file.save(os.path.join(UPLOAD_FOLDER, file_name))
+        save_form_data(request.form, file_name)
         return redirect(url_for('thanks'))
     return render_template('upload.html', form=form)
+
+
+def save_form_data(form, file_name):
+    """Save the data associated with an uploaded dataset."""
+    data_dict = dict((field, form[field]) for field in form)
+    # Now delete the unnecessary keys...
+    del data_dict['submit'], data_dict['csrf']
+    data_dict['file_name'] = file_name
+    dataset = Dataset(**data_dict)
+    db.session.add(dataset)
+    db.session.commit()
 
 
 @views.route('/thanks/')
