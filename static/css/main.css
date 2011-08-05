@@ -1,0 +1,16 @@
+a,a:active,a:visited{color:#8fc829;}
+a:hover{text-decoration:underline;}
+::-moz-selection{background:#8fc829;color:#fff;text-shadow:none;}
+::selection{background:#8fc829;color:#fff;text-shadow:none;}
+ul{list-style:none;}
+body{color:#444;}
+header{background:url('/static/img/repeat_header.png') repeat-x;display:block;height:338px;margin-bottom:50px;}header .header_bg{background:url('/static/img/header.png') no-repeat center center;height:338px;margin:0 auto;width:960px;}
+#upload{background:#EAEBE4;border:1px solid #9C8579;margin:0 auto 75px;padding:25px;width:35%;-moz-border-radius:11px;-webkit-border-radius:11px;border-radius:11px;}#upload label{color:#666;text-transform:uppercase;}
+#upload input{font-size:16px;margin:5px 0 20px;padding:7px;width:100%;}
+#upload #file{background:white;color:#9C8579;}
+#upload #submit{display:block;font-weight:normal;margin-left:50%;width:50%;}
+footer{height:50px;margin:100px 0 0;width:100%;}footer .cfa{background:url('/static/img/cfa_dark.png') no-repeat center center;height:34px;}
+::-webkit-input-placeholder{color:#9C8579;}
+:-moz-placeholder{color:#9C8579;}
+.thanks{margin-top:100px;}.thanks h1{color:#222;font-size:64px;padding:25px 0 10px;text-align:center;}
+.thanks p{font-size:20px;text-align:center;}
