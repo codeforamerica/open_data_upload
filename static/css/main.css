@@ -15,7 +15,7 @@ header{background:url('/static/img/repeat_header.png') repeat-x;display:block;he
 #upload #submit{display:block;font-weight:normal;margin-left:50%;width:50%;}
 #upload .disclaimer{margin:60px 0 20px;}
 #upload .errors,#upload li{color:#ab0000;margin:0 0 40px;text-transform:uppercase;}
-footer{height:70px;margin:100px 0 0;width:100%;}footer .cfa{background:url('/static/img/cfa_dark.png') no-repeat center center;height:50px;margin:0 auto;width:120px;}
+footer{height:70px;margin:75px 0 0;width:100%;}footer .cfa{background:url('/static/img/cfa_dark.png') no-repeat center center;height:50px;margin:0 auto;width:120px;}
 footer .cfa:hover{background-image:url('/static/img/cfa_color.png');}
 ::-webkit-input-placeholder{color:#9C8579;}
 :-moz-placeholder{color:#9C8579;}
