@@ -18,8 +18,17 @@
     {{ form.hidden_tag() }}
     {{ render_field(form.name, placeholder="Your Name") }}
     {{ render_field(form.email, placeholder="Your Email") }}
+    {{ render_field(form.phone, placeholder="867-5309") }}
+    <hr />
     {{ render_field(form.file) }}
+    {{ render_field(form.url, placeholder="http://boston.gov/my/dataset/") }}
+    {{ render_field(form.title, placeholder="My Open Dataset") }}
+    {{ render_field(form.description, placeholder="Tell us about the data...",
+                    rows=8) }}
     {{ form.submit }}
+    <p class="disclaimer"><strong>DISCLAIMER</strong>: Open Data Boston is
+    still currently being developed. All data will remain private and is
+    intended for internal City of Boston use.</p>
 </form>
 
 {% endblock %}
