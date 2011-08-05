@@ -1,4 +1,5 @@
-@color: #8fc829;
+@color: #ffde16;
+@dark_color: #9C8579;
 
 /* Link Color and Styles */
 a, a:active, a:visited { color: @color; }
@@ -6,8 +7,8 @@ a:hover { text-decoration: underline; }
 
 
 /* Custom highlight */
-::-moz-selection{ background:@color; color:#fff; text-shadow: none; }
-::selection { background:@color; color:#fff; text-shadow: none; }
+::-moz-selection{ background: rgba(255, 222, 22, .6); text-shadow: 1px 1px 0 #777; }
+::selection { background: rgba(255, 222, 22, .6); text-shadow: -1px 1px 0 #777; }
 
 /* I never find myself really using list-style. */
 ul{ list-style: none; }
@@ -31,7 +32,7 @@ header{
 
 #upload{
     background: #EAEBE4;
-    border: 1px solid #9C8579;
+    border: 1px solid @dark_color;
     margin: 0 auto 75px;
     padding: 25px;
     width: 35%;
@@ -42,21 +43,34 @@ header{
         color: #666;
         text-transform: uppercase;
     }
-    input{
+    input, textarea{
         font-size: 16px;
-        margin: 5px 0 20px;
+        margin: 20px 0 5px;
         padding: 7px;
         width: 100%;
     }
+    hr{
+        border-top: 1px solid @dark_color;
+        display: block;
+        margin: 35px 0;
+    }
     #file{
         background: white;
-        color: #9C8579;
+        color: @dark_color;
     }
     #submit{
         display: block;
         font-weight: normal;
         margin-left: 50%;
         width: 50%;
+    }
+    .disclaimer{
+        margin: 60px 0 20px;
+    }
+    .errors, li{
+        color: #ab0000;
+        margin: 0 0 40px;
+        text-transform: uppercase;
     }
 }
 
@@ -68,6 +82,9 @@ footer{
     .cfa{
         background: url('/static/img/cfa_dark.png') no-repeat center center;
         height: 34px;
+    }
+    .cfa:hover{
+        background-image: url('/static/img/cfa_color.png');
     }
 }
 
