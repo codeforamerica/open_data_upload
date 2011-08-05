@@ -12,6 +12,13 @@
 
 {% block main %}
 
+<p class="details">To add your data to the <strong>Boston Data Catalog</strong>, please upload
+your file using the form below.  We will review the uploaded information and
+contact you if we have any questions.  Common data file formats include CSV, XLS,
+SQL, and XML.  Please use the <strong>DATASET URL</strong> field if your data
+lives somewhere (publicly-accessible) on the Internet.  Thanks for your assistance
+in helping to make Boston a leader in the OpenGov field!</p>
+
 {% from "_form_helpers.html" import render_field %}
 <form action="{{ url_for('views.upload') }}" method="POST"
       enctype="multipart/form-data" id="upload">
