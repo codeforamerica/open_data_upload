@@ -7,14 +7,20 @@ a:hover { text-decoration: underline; }
 
 
 /* Custom highlight */
-::-moz-selection{ background: rgba(255, 222, 22, .6); text-shadow: 1px 1px 0 #777; }
-::selection { background: rgba(255, 222, 22, .6); text-shadow: -1px 1px 0 #777; }
+::-moz-selection{ background: rgba(255, 222, 22, .6); color: #444; text-shadow: 1px 1px 0 #fff; }
+::selection { background: rgba(255, 222, 22, .6); color: #444; text-shadow: -1px 1px 0 #fff; }
 
 /* I never find myself really using list-style. */
 ul{ list-style: none; }
 
 body{
     color: #444;
+}
+
+/* Image Pre-loading... */
+body:after{
+  content: url('/static/img/cfa_dark.png') url('/static/img/cfa_color.png') url('/static/img/header.png');
+  display: none;
 }
 
 header{
@@ -30,12 +36,20 @@ header{
     }
 }
 
+.details{
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 auto 50px;
+    text-align: justify;
+    width: 40%;
+}
+
 #upload{
     background: #EAEBE4;
     border: 1px solid @dark_color;
     margin: 0 auto 75px;
     padding: 25px;
-    width: 35%;
+    width: 40%;
     -moz-border-radius: 11px;
     -webkit-border-radius: 11px;
     border-radius: 11px;
@@ -43,9 +57,12 @@ header{
         color: #666;
         text-transform: uppercase;
     }
+    p{
+      margin-top: 20px;
+    }
     input, textarea{
         font-size: 16px;
-        margin: 20px 0 5px;
+        margin: 5px 0;
         padding: 7px;
         width: 100%;
     }
@@ -76,14 +93,14 @@ header{
 
 
 footer{
-    height: 50px;
+    height: 70px;
     margin: 100px 0 0;
     width: 100%;
     .cfa{
         background: url('/static/img/cfa_dark.png') no-repeat center center;
-        height: 34px;
+        height: 50px;
         margin: 0 auto;
-        width: 100px;
+        width: 120px;
     }
     .cfa:hover{
         background-image: url('/static/img/cfa_color.png');
